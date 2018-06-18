@@ -44,22 +44,22 @@ function myBoxes() {
     /*
     *   Input - P
     */
-// function myClick() {
-//     document.getElementById("text").style.display="block";
-//      document.getElementById("text").autofocus="true";
-//     document.getElementById("demo").style.display="none";
-//     document.getElementById("text").style.border="block";
-//     document.getElementById("text").value = document.getElementById("demo").innerText + "_ _ _ _ _ _";
+function myClick() {
+    document.getElementById("text").style.display="block";
+     document.getElementById("text").autofocus="true";
+    document.getElementById("demo").style.display="none";
+    document.getElementById("text").style.border="block";
+    document.getElementById("text").value = document.getElementById("demo").innerText + "_ _ _ _ _ _";
 
-// }
+}
 
-// function myInput() {
-//     if (event.keyCode === 13) {
-//         document.getElementById("text").style.display="none";
-//         document.getElementById("demo").innerText = document.getElementById("text").value;
-//         var p = document.getElementById("demo");
-//         p.style.marginLeft="45%";
-//         p.style.marginTop="4%";
-//         p.style.display="block";
-//     }
-// }
+function myInput() {
+    if (event.keyCode === 13) {
+        document.getElementById("text").style.display="none";
+        document.getElementById("demo").innerText = document.getElementById("text").value;
+        var p = document.getElementById("demo");
+        p.style.marginLeft="45%";
+        p.style.marginTop="4%";
+        p.style.display="block";
+    }
+}

@@ -10,35 +10,35 @@ function myOption() {
     /*
     *   Radio buttons
     */
-// function myRadio() {
-//     if (document.getElementById("male").checked == true) {
-//         alert(document.getElementById("male").value)
-//     }
-//     if (document.getElementById("female").checked == true) {
-//         alert(document.getElementById("female").value)
-//     }
-// }
+function myRadio() {
+    if (document.getElementById("male").checked == true) {
+        alert(document.getElementById("male").value)
+    }
+    if (document.getElementById("female").checked == true) {
+        alert(document.getElementById("female").value)
+    }
+}
 
     /*
     *   Check-Box
     */
-// function myBoxes() {
-//     if (document.getElementById("checkBox1").checked == true) {
-//         document.getElementById("demo1").style.display = "block";
-//     } else {
-//         document.getElementById("demo1").style.display = "none";
-//     }
-//     if (document.getElementById("checkBox2").checked == true) {
-//         document.getElementById("demo2").style.display = "block";
-//     } else {
-//         document.getElementById("demo2").style.display = "none";
-//     }
-//     if (document.getElementById("checkBox3").checked == true) {
-//         document.getElementById("demo3").style.display = "block";
-//     } else {
-//         document.getElementById("demo3").style.display = "none";
-//     }
-// }
+function myBoxes() {
+    if (document.getElementById("checkBox1").checked == true) {
+        document.getElementById("demo1").style.display = "block";
+    } else {
+        document.getElementById("demo1").style.display = "none";
+    }
+    if (document.getElementById("checkBox2").checked == true) {
+        document.getElementById("demo2").style.display = "block";
+    } else {
+        document.getElementById("demo2").style.display = "none";
+    }
+    if (document.getElementById("checkBox3").checked == true) {
+        document.getElementById("demo3").style.display = "block";
+    } else {
+        document.getElementById("demo3").style.display = "none";
+    }
+}
 
 
     /*

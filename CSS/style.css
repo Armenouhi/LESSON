@@ -3,7 +3,7 @@ form {
     flex-direction: column;
     height: 350px;
 }
- /*input {
+ input {
      width: 100%;
  }
 input[type=radio] {
@@ -21,7 +21,7 @@ input[type=checkbox] {
  p {
     display: none;
 }
-#demo {
+/*#demo {
     display: block;
     margin-left: 45%;
     margin-top: 3%;
@@ -33,10 +33,10 @@ input[type=text] {
 input[type=button] {
     height: 50px;
     border-radius: 40px;
-}
+}*/
 input[type=button]:hover{
     background-color: #2f6f9f;
     color: white;
     text-decoration: none;
-}*/
+}
   

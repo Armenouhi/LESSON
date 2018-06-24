@@ -4,6 +4,7 @@ body {
     align-items: center;
     flex-direction: column;
     margin-top: 70px;
+    font-size: 30px;
 }
 h1 {
     margin-top: 50px;

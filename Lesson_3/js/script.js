@@ -19,8 +19,8 @@ var products = {
             }
         ],
        productPrice: 150,
-    
        count: 12,
+       date: new Date(),
 
        getProductName: function () {
           for (var i in  this.productArrays) {
@@ -53,7 +53,7 @@ var products = {
       getCount: function(){
         for (var i in  this.productArrays) {
             for (var j in this.productArrays[i]) {
-                if (this.productName == this.productArrays[i][j]){
+                if (this.productName == this.productArrays[0][j]){
                     return  this.count += "կգ";
                 }
                 else if (this.productName == this.productArrays[1][j]){
@@ -64,10 +64,18 @@ var products = {
             }
         }
        },
+       getDate: function() {
+           return  this.date.getDate() + " " +  (this.date.getMonth() + 1) + " " + this.date.getFullYear();
+       },
+       getTerm: function (){
+           return  this.date.getDate() + " " +  (this.date.getMonth() + 1) + " " + (this.date.getFullYear() + 1);
+       },
 
-      info: function () {
+
+       info: function () {
         return  ("Անվանում՝ " + this.getProductName() + "<br> Գին՝ " + this.productPrice + "դրամ<br> Քանակ՝ " + this.getCount() + "<br> Զեղչված՝ " +
-            this.discount() + "<br> Կատեգորիա՝ " + this.getProductCategories());
+            this.discount() + "<br> Կատեգորիա՝ " + this.getProductCategories() + "<br> Արտադրված է՝ " + this.getDate() +
+            "<br> Օգտագործման ժամանակը, մինչև՝ " + this.getTerm());
       },
 
 }
@@ -90,7 +98,12 @@ productsInfo()
 
 function information() {
     alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[0][0];
+    for (let i = 0; i < products.productArrays.length; i++) {
+        for (let j = 0; j < products.productArrays[i].length; j++) {
+            console.log(products.productName = products.productArrays[i][j]);
+        }
+    }
+
     document.body.innerHTML = (products.info());
 }
 
@@ -100,78 +113,10 @@ function information_1() {
     document.body.innerHTML = (products.info());
 }
 
-function information_2() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[0][2];
-    document.body.innerHTML = (products.info());
-}
-
-function information_3() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[0][3];
-    document.body.innerHTML = (products.info());
-}
-
-function information_4() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[1][0];
-    document.body.innerHTML = (products.info());
-}
-
-function information_5() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[1][1];
-    document.body.innerHTML = (products.info());
-}
-
-function information_6() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[1][2];
-    document.body.innerHTML = (products.info());
-}
-
-function information_7() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[1][3];
-    document.body.innerHTML = (products.info());
-}
-
-function information_8() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[2][0];
-    document.body.innerHTML = (products.info());
-}
-
-function information_9() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[2][1];
-    document.body.innerHTML = (products.info());
-}
-
-function information_10() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[2][2];
-    document.body.innerHTML = (products.info());
-}
-
-function information_11() {
-    alert("Շնորհակալություն գնումների համար")
-    products.productName = products.productArrays[2][3];
-    document.body.innerHTML = (products.info());
-}
-
 function f() {
     var td = document.getElementsByClassName("table");
-            td[0].onclick = information;
+    for (let i = 0; i <td.length ; i++) {
+        td[i].onclick = information;
+    }
             td[1].onclick = information_1;
-            td[2].onclick = information_2;
-            td[3].onclick = information_3;
-            td[4].onclick = information_4;
-            td[5].onclick = information_5;
-            td[6].onclick = information_6;
-            td[7].onclick = information_7;
-            td[8].onclick = information_8;
-            td[9].onclick = information_9;
-            td[10].onclick = information_10;
-            td[11].onclick = information_11;
 }

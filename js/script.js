@@ -136,25 +136,32 @@ function validation() {
                        $(child[5]).html('<input type="button" value="Change" id="btn" class="bg-success btn btn-primary"' +
                             ' data-toggle="modal" data-target="#myModalForm">');
 
+                            //  Update id of button save
+                        $("#btn-danger").attr('id', 'update');
+                            //  Update id of button save
+                        document.getElementById("update").value = "Edit";
 
                         /**
-                         *  Replace datas
+                         *  Update datas
                          * */
 
-                          $( "#btn-danger" ).dblclick(function() {
+                          $( "#update" ).click(function() {
 
                             function changeText() {
                                 if (editTr){
-                                    $(child[1]).replaceWith(product.name);
-                                    $(child[2]).replaceWith(product.price);
-                                    $(child[3]).replaceWith(product.producted);
-                                    $(child[4]).replaceWith(product.expiration);
+                                        $(child[1]).replaceWith(product.name);
+                                        $(child[2]).replaceWith(product.price);
+                                        $(child[3]).replaceWith(product.producted);
+                                        $(child[4]).replaceWith(product.expiration);
+
                                 }
                             } changeText();
+
                         });
+                        
 
                     });
-                    
+
 
                     /**
                      *  Create delete button

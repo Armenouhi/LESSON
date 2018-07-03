@@ -125,7 +125,7 @@ function validation() {
 
 
                     /**
-                     *  Edit datas
+                     *  Click Edit
                      * */
 
                     $(".edit").click(function(){
@@ -133,29 +133,28 @@ function validation() {
                         var child = $(editTr).children();
 
 
-                        $(child[5]).html('<input type="button" value="Change" id="btn" class="bg-success btn btn-primary"' +
+                       $(child[5]).html('<input type="button" value="Change" id="btn" class="bg-success btn btn-primary"' +
                             ' data-toggle="modal" data-target="#myModalForm">');
 
+
+                        /**
+                         *  Replace datas
+                         * */
+
+                          $( "#btn-danger" ).dblclick(function() {
+
+                            function changeText() {
+                                if (editTr){
+                                    $(child[1]).replaceWith(product.name);
+                                    $(child[2]).replaceWith(product.price);
+                                    $(child[3]).replaceWith(product.producted);
+                                    $(child[4]).replaceWith(product.expiration);
+                                }
+                            } changeText();
+                        });
+
                     });
-
-
-                    /**
-                     *  If clicked button "Save" again [doubleclick];
-                     * */
-                    /*$( "#btn-danger" ).dblclick(function() {
-                        var changeTr =  $(this).closest('tr');
-                        var change = $(changeTr).children();
-
-                        function changeText() {
-                            if (document.getElementById('btn').clicked == true) {
-                                $(change[1]).text(product.name);
-                                $(change[2]).text(product.price);
-                                $(change[3]).text(product.producted);
-                                $(change[4]).text(product.expiration);
-                            }
-                        }
-                    });*/
-
+                    
 
                     /**
                      *  Create delete button

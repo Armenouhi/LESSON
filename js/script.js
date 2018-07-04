@@ -107,7 +107,7 @@ function validation() {
                 } else if(th[i].innerText == "Product name") {
                     td.innerHTML = product.name;
                 } else if (th[i].innerText == "Price") {
-                    td.innerHTML = product.price;
+                    td.innerHTML = product.price + " dram";
                 } else if (th[i].innerText == "Producted") {
                     td.innerHTML = product.producted;
                 } else if (th[i].innerText == "Expiration Date") {
@@ -136,6 +136,7 @@ function validation() {
                        $(child[5]).html('<input type="button" value="Change" id="btn" class="bg-success btn btn-primary"' +
                             ' data-toggle="modal" data-target="#myModalForm">');
 
+                    
                             //  Update id of button save
                         $("#btn-danger").attr('id', 'update');
                             //  Update id of button save
@@ -151,7 +152,7 @@ function validation() {
                                 if (editTr){
 
                                     $(child[1]).replaceWith( "<td>" + product.name + "</td>" );
-                                    $(child[2]).replaceWith( "<td>" + product.price + "</td>" );
+                                    $(child[2]).replaceWith( "<td>" + product.price + " dram" + "</td>" );
                                     $(child[3]).replaceWith( "<td>" + product.producted + "</td>" );
                                     $(child[4]).replaceWith( "<td>" + product.expiration + "</td>" );
                                     return;

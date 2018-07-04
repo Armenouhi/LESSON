@@ -149,16 +149,17 @@ function validation() {
 
                             function changeText() {
                                 if (editTr){
-                                        $(child[1]).replaceWith(product.name);
-                                        $(child[2]).replaceWith(product.price);
-                                        $(child[3]).replaceWith(product.producted);
-                                        $(child[4]).replaceWith(product.expiration);
 
+                                    $(child[1]).replaceWith( "<td>" + product.name + "</td>" );
+                                    $(child[2]).replaceWith( "<td>" + product.price + "</td>" );
+                                    $(child[3]).replaceWith( "<td>" + product.producted + "</td>" );
+                                    $(child[4]).replaceWith( "<td>" + product.expiration + "</td>" );
+                                    return;
                                 }
                             } changeText();
 
                         });
-                        
+
 
                     });
 

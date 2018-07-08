@@ -1,11 +1,21 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
 
+
+    /**
+     *      Checkboxes
+     * */
     $scope.user = {
-        value1 : "Pizza",
-        value2 : "Hamburger"
+        value1 : "",
+        value2 : ""
     };
 
+    $scope.names = ['pizza', 'hamburger'];
+
+
+    /**
+     *      Select-box
+     * */
     $scope.countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", 
         "Argentina", "Armenia", "Aruba", "Australia", "Austria",
         "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina",
@@ -40,12 +50,25 @@ app.controller('myCtrl', function($scope) {
         "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", 
         "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"];
 
-    $scope.names = ['pizza', 'hamburger'];
-    $scope.my = { favorite: '' };
-    
+
+    /**
+     *      Show or hide Email input
+     * */
     $scope.showHideTest = false;
 
+
+    /**
+     *      Show values
+     * */
     $scope.show = function() {
         document.getElementById("showValues").style.display = "block";
+    }
+
+
+    /**
+     *      Hide values
+     * */
+    $scope.hide = function() {
+        document.getElementById("showValues").style.display = "none";
     }
 });

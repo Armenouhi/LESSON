@@ -13,7 +13,7 @@
 <body>
 <div ng-app="myApp" ng-controller="myCtrl" class="main-component">
     <div class="container">
-        <form class="form-control mt-5" name="myForm" ng-submit="show()">
+        <form class="form-control mt-5" name="myForm" ng-submit="update(user)">
             <label for="fname"> First Name:</label>
             <input type="text" name="firstname" id="fname" ng-model="user.firstName" class="form-control" placeholder="Firstname" required>
             <br><br/>
@@ -38,12 +38,12 @@
                 </div>
                 <div ng-app="" id="showValues" class="text-center">
                     <ul class="form-control">
-                        <li class="form-control" ng-repeat='i in user'><p>{{i}}</p></li>
+                        <li class="form-control" ng-repeat='i in leader'><p>{{i}}</p></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-12">
-                <input class="btn btn-primary form-control center mt-5" type="reset"  ng-click="hide()" value="Reset">
+                <input class="btn btn-primary form-control center mt-5" type="reset"  ng-click="reset()" value="Reset">
                 <input type="submit" value="Show Data" class="form-control bg-success text-white mt-4">
             </div>
         </form>

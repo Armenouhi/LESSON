@@ -57,18 +57,31 @@ app.controller('myCtrl', function($scope) {
     $scope.showHideTest = false;
 
 
-    /**
-     *      Show values
-     * */
-    $scope.show = function() {
-        document.getElementById("showValues").style.display = "block";
-    }
-
 
     /**
      *      Hide values
      * */
-    $scope.hide = function() {
-        document.getElementById("showValues").style.display = "none";
-    }
+
+      $scope.leader = {};
+
+    $scope.reset = function() {
+      // Example with 1 argument
+      $scope.user = angular.copy($scope.leader);
+    };
+
+    /**
+     *      Show values
+     * */
+    
+    $scope.update = function(user) {
+      // Example with 2 arguments
+      document.getElementById("showValues").style.display="block";
+      angular.copy(user, $scope.leader);
+      console.log( $scope.leader)
+    };
+
+
+    $scope.reset();
+
+
 });

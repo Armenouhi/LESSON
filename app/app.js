@@ -11,10 +11,11 @@ angular.module('myApp', [
     'myApp.about',
     'myApp.blog',
     'myApp.contact',
+    'myApp.home',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/anothererr'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);

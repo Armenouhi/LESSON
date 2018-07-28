@@ -1,34 +1,4 @@
-/*  'use strict';
-
-var app = angular.module("myApp", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-        .when("/", {
-            templateUrl : "index.html",
-        })
-        .when("/products", {
-            templateUrl : "products/products.html",
-            controller : "ProductCtrl"
-        })
-        .when("/restorans", {
-            templateUrl : "restorans/restorans.html",
-            controller : "RestoranCtrl"
-        })
-        .when("/componies", {
-            templateUrl : "componies/componies.html",
-            controller : "ComponyCtrl"
-        });
-});
-app.controller("ProductCtrl", function ($scope) {
-
-});
-app.controller("RestoranCtrl", function ($scope) {
-
-});
-app.controller("ComponyCtrl", function ($scope) {
-
-});     */
-
+  'use strict';
 
 var scotchApp = angular.module('testApp', ['ngRoute']);
 
@@ -36,19 +6,19 @@ var scotchApp = angular.module('testApp', ['ngRoute']);
 scotchApp.config(function($routeProvider) {
     $routeProvider
 
-        // route for the about page
+        // route for the products page
         .when('/products', {
             templateUrl : 'products.html',
 
         })
 
-        // route for the contact page
+        // route for the restorans page
         .when('/restorans', {
             templateUrl : 'restorans.html',
 
         })
 
-    // route for the contact page
+    // route for the componies page
         .when('/companies', {
         templateUrl : 'companies.html',
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Companies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dives_body">
+<h1 class="text-center">Companies</h1>
+<div class="contentWrapper">
+    <div data-ng-controller="ComponyCtrl as vm" >
+
+        <div id="searchResults" class="row" ng-init="performSearch()" class="mt-3">
+            <div class="col-md-12">
+                <!-- items being paged -->
+                <div id="{{compony._id | isObj}}" ng-repeat="compony in vm.scomponies" class="col-md-4 text-center" >
+                    <ul>
+                        <li><a href="#" alt='Page does not a fount' ng-click="showHide(compony.name)">Name: {{compony.name}}</a></li>
+
+                        <img ng-style="firstComponiesImg" src="{{compony.componies_picture}}" alt="Image does not found">
+
+                    </ul>
+                </div>
+
+
+                <div ng-repeat="compony in vm.scomponies" class="col-md-12 text-center mt-3" ng-show="componyDetailId == compony.name">
+                    <li>Id: {{compony._id | isObj}}</li>
+                    <img ng-style="secondComponiesImg" src="{{compony.componies_picture}}" alt="Image does not found">
+                    <li><a href="#" alt='Page does not a fount'>Name: {{compony.name}}</a></li>
+                    <li>.Permalink: {{compony.permalink}}</li>
+                    <li>Crunchbase url: {{compony.crunchbase_url}}</li>
+                    <li>Homepage url: {{compony.homepage_url}}</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- pager -->
+            <div class="text-center">
+                <ul  ng-if="vm.pager.pages.length" class="pagination">
+                    <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                        <a ng-click="vm.setPage(1)">First</a>
+                    </li>
+                    <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                        <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
+                    </li>
+                    <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
+                        <a ng-click="vm.setPage(page)">{{page}}</a>
+                    </li>
+                    <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                        <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
+                    </li>
+                    <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                        <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+
+
+<script type="text/javascript" src="companies.js"></script>
+</body>
+

@@ -60,7 +60,8 @@
 
             $scope.secondComponiesImg = {
                 "width" : "300px",
-                "height" : "200px"
+                "height" : "200px",
+                "margin-top": "20px"
             };
 
             $scope.performSearch = function() {

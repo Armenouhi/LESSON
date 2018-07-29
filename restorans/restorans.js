@@ -59,8 +59,9 @@
             };
 
             $scope.secondRestoranImg = {
-                "width" : "300px",
-                "height" : "200px"
+                "width" : "500px",
+                "height" : "400px",
+                "margin-top": "20px"
             };
 
             $scope.performSearch = function() {

@@ -54,12 +54,14 @@
 
             $scope.firstProductImg = {
                 "width" : "250px",
-                "height" : "200px"
+                "height" : "200px",
+                "margin-top": "20px"
             };
 
             $scope.secondProductImg = {
                 "width" : "500px",
-                "height" : "500px"
+                "height" : "500px",
+                "margin-top": "20px"
             };
 
             $scope.performSearch = function() {

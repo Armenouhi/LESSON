@@ -14,7 +14,7 @@ angular.module('myApp.products', ['ngRoute'])
 
         $http.get("http://localhost:7777")
             .then(function(response) {
-                console.log();
+                console.log(response.data);
             });
-        response.data
+
     });

@@ -1,0 +1,364 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("http://4.bp.blogspot.com/-crkJJpAv7-I/UF_bFewnshI/AAAAAAAAAZA/QcROo__fU4Q/s1600/Ferrari+F12+Berlinetta.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300vh;
+}
+.bckg-body {
+    width: auto;
+    height: 100px;
+}
+#btn-2 {
+    width: 100px;
+    height: 35px;
+}
+.fa-close{
+    margin-left: -1px;
+    color: black;
+}
+.close {
+    font-size: 15px;
+    color: black;
+}
+.logo-img {
+    width: auto;
+    height: 80px;
+    margin-left: 20px;
+}
+img {
+    width: 20px;
+    height: 20px;
+}
+#example-search-input {
+    width: 150px;
+    background-color: #222;
+    border: lightgrey;
+    margin-left: 70px;
+}
+.icon-search {
+    width: 50px;
+    background-color: #222;
+}
+.fa-search {
+    margin-left: 6px;
+}
+span {
+    color: #92B233;
+    text-shadow: 5px 2px 2px black;
+}
+p {
+    color: white;
+    text-shadow: 5px 2px 2px black;
+    font-size: 30px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+.col-md-1 a:hover {
+    color: red;
+    text-decoration: none;
+}
+.autoshop {
+    margin-left: 15px;
+}
+i {
+    font-size: 23px;
+    color: white;
+    float: left;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+.dark {
+    background-color: black;
+}
+
+.badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 1px;
+    margin-top: -8px;
+    background: #d11717;
+    text-shadow: none;
+}
+.box:hover {
+    color: red;
+}
+.square {
+    width: 720px;
+    height: 70px;
+    background-color: black;
+}
+.evanto-market {
+    margin-left: 0.5px;
+    width: 100%;
+}
+.sq2 {
+    opacity: 0.5;
+}
+.triangle-right {
+    opacity: 0.5;
+}
+.triangle-bottomright {
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid black;
+    border-left: 70px solid transparent;
+    float: left;
+    margin-left: 200px;
+}
+#triangle-bottomright {
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid red;
+    border-left: 70px solid transparent;
+}
+#triangle-bottomleft {
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid red;
+    border-right: 70px solid transparent;
+    float: left;
+}
+.menu-one {
+    margin-top: 30px;
+}
+.sq1 {
+    width: 380px;
+    background-color: red;
+}
+.red-triangle {
+    margin-left: 230px;
+}
+.tr1 {
+    background-color: red;
+}
+.h5-text {
+    float: left;
+}
+.menu-two li {
+    list-style: none;
+    margin-top: 25px;
+}
+.menu-two {
+    float: left;
+}
+.menu-two a {
+    color: white;
+}
+.menu-two a:hover {
+    color: red;
+    text-decoration: none;
+}
+.phone i {
+    margin-left: 40px;
+}
+.phone a:hover {
+    color: white;
+    text-decoration: none;
+}
+.search {
+    float: left;
+    border: none;
+}
+/*Section*/
+section  {
+    width: 100%;
+    height: 1300vh;
+    background-color: white;
+}
+.mg-r {
+    margin-left: -120px;
+}
+.pull-right {
+    float: left;
+}
+.fa-sort-alpha-asc {
+    /*margin-right: 130px;*/
+}
+#dropdownMenu7 {
+    width: 100px;
+    background-color: white;
+    height: 30px;
+    /*margin-left:100px;*/
+    margin-top: -1px;
+    margin-bottom: 15px;
+}
+#dropdownMenu8 {
+    width: 100px;
+    background-color: white;
+    height: 30px;
+    /*margin-left:100px;*/
+    margin-top: -1px;
+}
+#btn-3 {
+    width: 250px;
+    height: 50px;
+    background: red;
+    border: none;
+    margin-left: 260px;
+}
+.menu-bar {
+    background-color: red;
+    height: 460px;
+}
+#first-button {
+    margin-top: 15px;
+}
+.dropdown-toggle {
+    width: 210px;
+    margin-top: 15px;
+    background-color: white;
+    height: 45px;
+}
+.dropdown-menu li {
+    width: 210px;
+}
+.slidecontainer {
+    width: 100%;
+}
+#slide {
+    width: 210px;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+#search {
+    background-color: #d11717;
+    color: white;
+}
+.bckg-img {
+    margin-left: -15px;
+    opacity: 0.7;
+    position: absolute;
+    height: 350px;
+    background: url("https://americantiredistributors.cdn.prismic.io/americantiredistributors/45e6d0e197fb531c01e315e2913b9fc0a1bf3cf2_gettyimages-98465614_01_compressed.jpg") no-repeat;
+    background-size: cover;
+}
+.text-line {
+    position: absolute;
+    height: 400px;
+    color: white;
+}
+.title {
+    margin-top: 20px;
+}
+#show {
+    color: white;
+    background-color: red;
+    width: 180px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+
+.sq3 {
+    width: 250px;
+    height: 70px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15px;
+}
+
+#triangle-bottomleft1 {
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid whitesmoke;
+    border-right: 70px solid transparent;
+    float: left;
+}
+.car-desc {
+    font-size: 15px;
+    color: gray;
+    text-shadow: none;
+}
+.car-price {
+    color: #d11717;
+}
+.ytu {
+    height: 30px;
+    background: gray;
+}
+.info {
+    height: 152px;
+}
+
+
+/*Footer*/
+.footer-child-one {
+    background-color: #222;
+}
+.footer-child-two {
+    background-color: black;
+    height: 70px;
+}
+.footer-childs {
+    height: 350px;
+}
+.paragraph {
+    font-size: 15px;
+}
+
+.paragraph:before {
+    content: '';
+    width: 300px;
+    border-bottom: solid 3px red;
+    margin-bottom: 290px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+#email {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.email-button {
+    width: 150px;
+    height: 40px;
+    background-color: red;
+    border: none;
+}
+.p-menu {
+    font-size: 15px;
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50%;
+}

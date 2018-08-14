@@ -425,6 +425,12 @@ input[type="range"] {
     height: 152px;
 }
 
+.carsImg {
+    width: 220px;
+    height: 100px;
+    margin-top: 13px;
+}
+
 
 /*Footer*/
 .footer-child-one {

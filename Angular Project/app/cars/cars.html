@@ -2,7 +2,11 @@
   <section class="mt-5">
 
     <div class="col-md-12 mt-5">
-      <div class="col-md-6">col-md-6</div>
+      <div class="col-md-6 d-flex">
+        <div class="col-md-1 bg-light" id="pointer"><i id="home" class="fa fa-home text-dark" ></i></div>
+        <div class="col-md-2 bg-light" id="pointer1">Product</i></div>
+        <div class="col-md-2 bg-light" id="pointer2">Type</div>
+      </div>
       <div class="col-md-6 ">
         <button id="btn-3" class="text-white">UPLOAD YOUR WEHICKLE</button>
       </div>
@@ -113,16 +117,26 @@
               </div>
             </div>
 
-            <div class="slidecontainer mt-3">
-              <input id="slide" type="range" min="1" max="100" value="50">
-            </div>
+            <div class="col-md-12 d-flex">
+              <div class="col-md-6">$ <output name="amount" id="amount" for="rangeInput"><h6>60000</h6></output></div>
+              <div class="col-md-6 d-flex"> -$<output name="amount1" id="amount1" for="rangeInput1"><h6>130000</h6></output></div>
+             </div>
+
+
+                <input type="range" id="rangeInput"
+                       name="rangeInput" min="5000" max="100000" value="50000"
+                       oninput="amount.value=rangeInput.value">
+
+                <input type="range" id="rangeInput1"
+                       name="rangeInput1" min="100000" max="200000" value="150000"
+                       oninput="amount1.value=rangeInput1.value" >
 
             <button id="search" type="button" class="ht-btn ht-btn-default dropdown-toggle"><i class="fa fa-search"></i>Search Now</button>
 
           </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 mt-5">
           <div class="col-md-12 mt-5 bckg-img"></div>
           <div class="col-md-12 mt-5 text-line">
             <h5 class="title">LOREM IPSUM DOLOR</h5>
@@ -138,10 +152,10 @@
       </div>
       <div class="col-md-9">
         <div class="col-md-12">
-          <div class="bg-light sq3">
-            <h3 class="mt-2">NEW CARS (45)</h3>
+          <div class="sq3" id="trapezoid">
+            <h3 class="">NEW CARS (45)</h3>
           </div>
-          <div id="triangle-bottomleft1"></div>
+          <!--<div id="triangle-bottomleft1" ></div>-->
         </div>
         <div class="col-md-12 bg-light d-flex">
           <div class="col-md-2 mr-5 d-flex">

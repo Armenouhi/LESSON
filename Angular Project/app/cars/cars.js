@@ -10,15 +10,20 @@ angular.module('myApp.cars', ['ngRoute'])
 }])
 
 .controller('CarsCtrl', function($scope, $http) {
-    $http.get("cars.json")
+    $http.get("http://localhost:8081")
         .then(function(response) {
             $scope.carss = response.data;
-            // console.log($scope.carss);
 
             $scope.carsImg = {
                 "width" : "220px",
                 "height" : "100px",
                 "margin-top" : "13px"
             };
+
+            $scope.IsVisible = true;
+
+            $scope.ShowHide = function(){
+                $scope.IsVisible = $scope.IsVisible = false;
+            }
         });
 });

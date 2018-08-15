@@ -1,0 +1,36 @@
+<div class="container" ng-app="myApp" ng-controller="UsersCtrl">
+    <section class="section-users mt-5" >
+        <div class="col-md-12 mt-3">
+            <h2>Registration</h2>
+            <form action="#" name="usersForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="email">
+                    <br/>
+                    <span style="color:red" ng-show="usersForm.email.$dirty && usersForm.email.$invalid" class="ng-hide">
+                   Please Enter Valid  Email.!
+                   </span>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" ng-model="pswd"
+                    ng-pattern="/^[a-z0-9]+$/i">
+                    <br/>
+                    <span style="color:red" ng-show="usersForm.pswd.$dirty && usersForm.pswd.$invalid" class="ng-hide">
+                   Please Enter Valid  Password.!
+                   </span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input mt-4" type="checkbox" name="remember"><p class="ml-5">Remember me</p>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+
+
+

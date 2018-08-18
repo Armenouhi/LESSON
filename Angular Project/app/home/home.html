@@ -1,0 +1,89 @@
+<div class="container" ng-app="myApp" ng-controller="HomeCtrl">
+    <section class="section-home mt-5">
+
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h2>Stacked form</h2>
+                <form action="#" name="myForm"  ng-submit="funcSave()">
+                    <div class="form-group">
+                        <label for="cars_name">Model:</label>
+                        <input type="text" class="form-control" id="cars_name" placeholder="The model of car" name="cars_name"
+                               ng-model="cars_name" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/">
+                        <br/>
+                        <span style="color:red" ng-show="myForm.cars_name.$dirty && myForm.cars_name.$invalid" class="ng-hide">
+                  Please Enter Valid  Name.!
+                 </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cars_price">Price: </label>
+                        <input type="text" class="form-control" id="cars_price" placeholder="The price of car"
+                               name="cars_price"  ng-model="cars_price" ng-pattern="/^\d+$/">
+                        <br/>
+                        <span style="color:red" ng-show="myForm.cars_price.$dirty && myForm.cars_price.$invalid" class="ng-hide">
+                  Please Enter Valid  Price.!
+                 </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cars_year">Year: </label>
+                        <input type="text" class="form-control" id="cars_year" placeholder="The year of car" name="cars_year"
+                               ng-pattern="/^\d{4}$/" ng-model="cars_year">
+
+                        <br/>
+                        <span style="color:red" ng-show="myForm.cars_year.$dirty && myForm.cars_year.$invalid" class="ng-hide">
+                   Please Enter Valid  Date Of Birth.!
+                   </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cars_transmission">Transmission: </label>
+                        <input type="text" class="form-control" id="cars_transmission" placeholder="The transmission of car"
+                               name="cars_transmission" ng-model="cars_transmission" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/">
+                        <br/>
+                        <span style="color:red" ng-show="myForm.cars_transmission.$dirty && myForm.cars_transmission.$invalid" class="ng-hide">
+                  Please Enter Valid  Transmission.!
+                 </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cars_useWay">Price: </label>
+                        <input type="text" class="form-control" id="cars_useWay" placeholder="The price of car"
+                               name="cars_useWay"  ng-model="cars_useWay" ng-pattern="/^\d+$/">
+                        <br/>
+                        <span style="color:red" ng-show="myForm.cars_useWay.$dirty && myForm.cars_useWay.$invalid" class="ng-hide">
+                  Please Enter Valid  Use Way.!
+                 </span>
+                    </div>
+
+
+
+                    <div class="col-md-12 d-flex">
+                        <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                        <button type="reset" class="btn btn-danger ml-3" value="submit">Reset</button>
+                    </div>
+                    <!--<button type="submit" class="btn btn-primary" value="submit">Submit</button>-->
+                </form>
+
+                <form action="http://localhost:1313/file_upload" method = "POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="mt-5">Upload Image</label>
+                        <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse… <input type="file" id="imgInp" name="file_name" multiple>
+                            </span>
+                        </span>
+                            <input type='submit' class="form-control" value='Upload File!' />
+                        </div>
+
+                    </div>
+
+                </form>
+
+                               <!--<form action = "http://localhost:1313/file_upload" method = "POST" enctype="multipart/form-data">-->
+                <!--<input type="file" name="file_name" />-->
+                <!--<input type = "submit" value = "Upload File" />-->
+                <!--</form>-->
+
+            </div>
+        </div>
+    </section>
+</div>

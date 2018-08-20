@@ -75,38 +75,30 @@
               </div>
 
             </div>
-            <div class="col-md-10 d-flex">
-              <div class="pull-right mt-4">
-                <label class="pull-left"><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Filter : </label>
-                <div class="select-wrapper pull-left">
-                  <div class="dropdown pull-left">
-                    <button class="dropdown-toggle ml-2" type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Latest
-                    </button>
-                    <ul  class="dropdown-menu" aria-labelledby="dropdownMenu7">
-                      <li>Offer</li>
-                      <li>Best Seller</li>
-                      <li>Featured</li>
-                      <li>Latest</li>
-                    </ul>
+
+            <div class="col-md-10 ">
+
+              <div class="right mt-4 d-flex">
+                  <div class="left d-flex">
+                    <label><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Filter : </label>
+                          <select class="ml-4" ng-switch="myVarFilter" ng-repeat="li in carss.data.filter" class="list-group-item mt-4" id="dropdownMenu7">
+                              <option class="list-group-item" value="{{li.li1}}">{{li.li1}}
+                              <option class="list-group-item" value="{{li.li2}}">{{li.li2}}
+                              <option class="list-group-item" value="{{li.li3}}">{{li.li3}}
+                              <option class="list-group-item" value="{{li.li4}}">{{li.li4}}
+                          </select>
                   </div>
-                </div>
-                <div class="pull-left">
-                  <label class="pull-left "><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Show : </label>
-                  <div class="select-wrapper pull-left">
-                    <div class="dropdown pull-left">
-                      <button class="dropdown-toggle ml-2" type="button" id="dropdownMenu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        6
-                      </button>
-                      <ul class="dropdown-menu " aria-labelledby="dropdownMenu8">
-                        <li>6</li>
-                        <li>12</li>
-                        <li>24</li>
-                        <li>All</li>
-                      </ul>
-                    </div>
+                  <div class="left d-flex">
+                      <label ><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Show : </label>
+
+                            <select class="ml-4" ng-switch="myVarShow" ng-repeat="lies in carss.data.show" class="list-group-item mt-4" id="dropdownMenu8">
+                                <option class="list-group-item" value="{{lies.li1}}">{{lies.li1}}
+                                <option class="list-group-item" value="{{lies.li2}}">{{lies.li2}}
+                                <option class="list-group-item" value="{{lies.li3}}">{{lies.li3}}
+                                <option class="list-group-item" value="{{lies.li4}}">{{lies.li4}}
+                            </select>
+
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -116,7 +108,7 @@
               <img class="carsImg" src="{{car.image}}">
             </div>
             <div class="col-md-7">
-              <p class="car-desc text-dark mt-2"><a href="" ng-click="showHide(car.model)">{{car.model | uppercase}}</a></p>
+              <p class="car-desc text-dark mt-2"><a href="#!/car" ng-click="showHide(car.model)">{{car.model | uppercase}}</a></p>
               <h3 class="car-price">{{car.price | currency}}</h3>
               <p class="car-desc">{{car.description}}</p>
 
@@ -136,7 +128,6 @@
               <p class="car-desc" style="color: black">{{car.description}}</p>
               <p class="car-cond" style="color: black">{{car.condition}}</p>
               <p class="car-body" style="color: black" id="fav-{{car._id}}" ng-show="showDetails">{{car.body}}</p>
-              <p class="car-desc" style="color: black">{{car.description}}</p>
 
               <div class="col-md-2 ytu">{{car.year}}</div>
               <div class="col-md-3 ml-1 ytu">{{car.transmission}}</div>

@@ -157,7 +157,27 @@ res.setHeader('Access-Control-Allow-Origin', '*');
                     "li3":"Manual",
                     "li4":"Semi-automatic",
                 }
-            ]}};
+            ],
+
+
+            "filter": [
+                {
+                    "li1":"Other",
+                    "li2":"Best Seller",
+                    "li3":"Featured",
+                    "li4":"Latest",
+                }
+            ],
+
+            "show": [
+                {
+                    "li1":6,
+                    "li2":12,
+                    "li3":24,
+                    "li4":"All",
+                }
+            ]
+        }};
 
 
     // console.log(JSON.stringify(responseBody));

@@ -13,14 +13,15 @@ angular.module('myApp.home', ['ngRoute'])
 
     $scope.funcSave = function()
     {
-        if($scope.myForm.$valid) {
-            alert("Form is Valid..!!");
-        }
-        else
-        {
-            alert("Form is not Valid..!!");
-            return false;
-        }
+            if($scope.myForm.$valid) {
+                alert("Form is Valid..!!");
+            }
+            else
+            {
+                alert("Form is not Valid..!!");
+                return false;
+            }
+
     }
 
 
@@ -29,6 +30,7 @@ angular.module('myApp.home', ['ngRoute'])
             $scope.carss = response.data;
 
         });
+
 
 })
 

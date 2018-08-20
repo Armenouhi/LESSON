@@ -8,20 +8,22 @@ angular.module('myApp.cars', ['ngRoute'])
       .when('/cars', {
     templateUrl: 'cars/cars.html',
     controller: 'CarsCtrl'
-  });
+  })
+      .otherwise({
+        redirectTo: '/car'
+    });
 }])
 
-.controller('CarsCtrl', function($scope, $http, $routeParams) {
+.controller('CarsCtrl', function($scope, $http) {
     $http.get("http://localhost:8081")
         .then(function(response) {
             $scope.carss = response.data;
 
-        });
+        })
     $scope.showHide = function (id) {
 
         $scope.carDetailId = id;
 
     };
-
 
 });

@@ -1,126 +1,134 @@
 <div class="container" ng-app="myApp" ng-controller="CarsCtrl">
-  <section>
-    <div class="row">
-      <div class="col-md-12 mt-5">
-        <div class="col-md-6 d-flex">
-          <div class="col-md-1 bg-light" id="pointer"><i id="home" class="fa fa-home text-dark" ></i></div>
-          <div class="col-md-2 bg-light" id="pointer1">Product</i></div>
-          <div class="col-md-2 bg-light" id="pointer2">Type</div>
+    <section>
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <div class="col-md-6 d-flex">
+                    <div class="col-md-1 bg-light" id="pointer"><i id="home" class="fa fa-home text-dark" ></i></div>
+                    <div class="col-md-2 bg-light" id="pointer1">Product</i></div>
+                    <div class="col-md-2 bg-light" id="pointer2">Type</div>
+                </div>
+                <div class="col-md-6 ">
+                    <button id="btn-3" class="text-white">UPLOAD YOUR WEHICKLE</button>
+                </div>
+            </div>
+
+            <div class="col-md-12 d-flex mt-5">
+                <div class="col-md-3">
+                    <div class="col-md-12 menu-bar">
+
+                        <select ng-switch="myVar" ng-repeat="c in carss.data.selects" class="list-group-item mt-4">
+                            <option class="list-group-item" value="{{c.li1}}">{{c.li1}}
+                            <option class="list-group-item" value="{{c.li2}}">{{c.li2}}
+                            <option class="list-group-item" value="{{c.li3}}">{{c.li3}}
+                            <option class="list-group-item" value="{{c.li4}}">{{c.li4}}
+                        </select>
+
+                        <div class="col-md-12 d-flex">
+                            <div class="col-md-6">$ <output name="amount" id="amount" for="rangeInput"><h6>60000</h6></output></div>
+                            <div class="col-md-6 d-flex"> -$<output name="amount1" id="amount1" for="rangeInput1"><h6>130000</h6></output></div>
+                        </div>
+
+
+                        <input type="range" id="rangeInput"
+                               name="rangeInput" min="5000" max="100000" value="50000"
+                               oninput="amount.value=rangeInput.value">
+
+                        <input type="range" id="rangeInput1"
+                               name="rangeInput1" min="100000" max="200000" value="150000"
+                               oninput="amount1.value=rangeInput1.value" >
+
+                        <button id="search" type="button" class="ht-btn ht-btn-default dropdown-toggle col-md"><i class="fa fa-search"></i>Search Now</button>
+
+
+                    </div>
+
+                    <div class="col-md-12 mt-5">
+                        <div class="col-md-12 mt-5 bckg-img"></div>
+                        <div class="col-md-12 mt-5 text-line">
+                            <h5 class="title">LOREM IPSUM DOLOR</h5>
+                            <h2 class="title"><b>INTERIOR</b></h2>
+                            <h2 class="title">ACCESSORIES</h2>
+                            <h5 class="title">Cras sit amet nibh libero, in gravida nulla. Nulla vel</h5>
+
+                            <button class="col-md col-sm" id="show"><b>SHOW NOW</b></button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="col-md-12">
+                        <div class="sq3" id="trapezoid">
+                            <h3 class="">NEW CARS (45)</h3>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 bg-light d-flex">
+                        <div class="col-md-2 mr-5 d-flex">
+                            <div class="col-md-1 mg-r mt-3">
+                                <button class="btn-cols"><i class="fa fa-th text-dark active mt-2" style="font-size:24px"></i></button>
+                            </div>
+                            <div class="col-md-1 ml-4 mt-3">
+                                <button class="btn-cols">
+                                    <i class="fa fa-server text-dark " style="font-size:24px"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-10 ">
+
+                            <div class="right mt-4 d-flex">
+                                <div class="left d-flex">
+                                    <label><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Filter : </label>
+                                    <select class="ml-4" ng-switch="myVarFilter" ng-repeat="li in carss.data.filter" class="list-group-item mt-4" id="dropdownMenu7">
+                                        <option class="list-group-item" value="{{li.li1}}">{{li.li1}}
+                                        <option class="list-group-item" value="{{li.li2}}">{{li.li2}}
+                                        <option class="list-group-item" value="{{li.li3}}">{{li.li3}}
+                                        <option class="list-group-item" value="{{li.li4}}">{{li.li4}}
+                                    </select>
+                                </div>
+                                <div class="left d-flex">
+                                    <label ><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Show : </label>
+
+                                    <select class="ml-4" ng-switch="myVarShow" ng-repeat="lies in carss.data.show" class="list-group-item mt-4" id="dropdownMenu8">
+                                        <option class="list-group-item" value="{{lies.li1}}">{{lies.li1}}
+                                        <option class="list-group-item" value="{{lies.li2}}">{{lies.li2}}
+                                        <option class="list-group-item" value="{{lies.li3}}">{{lies.li3}}
+                                        <option class="list-group-item" value="{{lies.li4}}">{{lies.li4}}
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="{{car._id}}" class="col-md-12 bg-light mt-5 d-flex info" ng-repeat="car in carss.data.cars | limitTo : carOnPage:startFrom">
+                        <div class="col-md-5" >
+                            <img class="carsImg" src="{{car.image}}">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="car-desc text-dark mt-2"><a ng-href="#!car/?{{car._id}} " >{{car.model | uppercase}}</a></p>
+                            <h3 class="car-price">{{car.price | currency}}</h3>
+                            <p class="car-desc">{{car.description}}</p>
+
+                            <div class="col-md-2 ytu">{{car.year}}</div>
+                            <div class="col-md-3 ml-1 ytu">{{car.transmission}}</div>
+                            <div class="col-md-2 ml-1 ytu">{{car.useWay}}</div>
+                        </div>
+                    </div>
+
+
+                    <div class="paginationRow">
+                        <button  class="pagination bg-danger ml-4 text-white"  ng-repeat="i in CountPageDivs"  id={{i}} ng-click="PaginationFunction($event)">
+                            {{i}}
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 ">
-          <button id="btn-3" class="text-white">UPLOAD YOUR WEHICKLE</button>
-        </div>
-      </div>
-
-      <div class="col-md-12 d-flex mt-5">
-        <div class="col-md-3">
-          <div class="col-md-12 menu-bar">
-
-                  <select ng-switch="myVar" ng-repeat="c in carss.data.selects" class="list-group-item mt-4">
-                    <option class="list-group-item" value="{{c.li1}}">{{c.li1}}
-                    <option class="list-group-item" value="{{c.li2}}">{{c.li2}}
-                    <option class="list-group-item" value="{{c.li3}}">{{c.li3}}
-                    <option class="list-group-item" value="{{c.li4}}">{{c.li4}}
-                  </select>
-
-              <div class="col-md-12 d-flex">
-                <div class="col-md-6">$ <output name="amount" id="amount" for="rangeInput"><h6>60000</h6></output></div>
-                <div class="col-md-6 d-flex"> -$<output name="amount1" id="amount1" for="rangeInput1"><h6>130000</h6></output></div>
-              </div>
-
-
-              <input type="range" id="rangeInput"
-                     name="rangeInput" min="5000" max="100000" value="50000"
-                     oninput="amount.value=rangeInput.value">
-
-              <input type="range" id="rangeInput1"
-                     name="rangeInput1" min="100000" max="200000" value="150000"
-                     oninput="amount1.value=rangeInput1.value" >
-
-              <button id="search" type="button" class="ht-btn ht-btn-default dropdown-toggle col-md"><i class="fa fa-search"></i>Search Now</button>
-
-
-          </div>
-
-          <div class="col-md-12 mt-5">
-            <div class="col-md-12 mt-5 bckg-img"></div>
-            <div class="col-md-12 mt-5 text-line">
-              <h5 class="title">LOREM IPSUM DOLOR</h5>
-              <h2 class="title"><b>INTERIOR</b></h2>
-              <h2 class="title">ACCESSORIES</h2>
-              <h5 class="title">Cras sit amet nibh libero, in gravida nulla. Nulla vel</h5>
-
-              <button class="col-md col-sm" id="show"><b>SHOW NOW</b></button>
-            </div>
-
-          </div>
-
-        </div>
-        <div class="col-md-9">
-          <div class="col-md-12">
-            <div class="sq3" id="trapezoid">
-              <h3 class="">NEW CARS (45)</h3>
-            </div>
-
-          </div>
-          <div class="col-md-12 bg-light d-flex">
-            <div class="col-md-2 mr-5 d-flex">
-              <div class="col-md-1 mg-r mt-3">
-                <button class="btn-cols"><i class="fa fa-th text-dark active mt-2" style="font-size:24px"></i></button>
-              </div>
-              <div class="col-md-1 ml-4 mt-3">
-                <button class="btn-cols">
-                  <i class="fa fa-server text-dark " style="font-size:24px"></i>
-                </button>
-              </div>
-
-            </div>
-
-            <div class="col-md-10 ">
-
-              <div class="right mt-4 d-flex">
-                  <div class="left d-flex">
-                    <label><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Filter : </label>
-                          <select class="ml-4" ng-switch="myVarFilter" ng-repeat="li in carss.data.filter" class="list-group-item mt-4" id="dropdownMenu7">
-                              <option class="list-group-item" value="{{li.li1}}">{{li.li1}}
-                              <option class="list-group-item" value="{{li.li2}}">{{li.li2}}
-                              <option class="list-group-item" value="{{li.li3}}">{{li.li3}}
-                              <option class="list-group-item" value="{{li.li4}}">{{li.li4}}
-                          </select>
-                  </div>
-                  <div class="left d-flex">
-                      <label ><i class="fa fa-sort-alpha-asc mr-5 text-dark"></i>Show : </label>
-
-                            <select class="ml-4" ng-switch="myVarShow" ng-repeat="lies in carss.data.show" class="list-group-item mt-4" id="dropdownMenu8">
-                                <option class="list-group-item" value="{{lies.li1}}">{{lies.li1}}
-                                <option class="list-group-item" value="{{lies.li2}}">{{lies.li2}}
-                                <option class="list-group-item" value="{{lies.li3}}">{{lies.li3}}
-                                <option class="list-group-item" value="{{lies.li4}}">{{lies.li4}}
-                            </select>
-
-                  </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="{{car._id}}" class="col-md-12 bg-light mt-5 d-flex info" ng-repeat="car in carss.data.cars">
-            <div class="col-md-5" >
-              <img class="carsImg" src="{{car.image}}">
-            </div>
-            <div class="col-md-7">
-              <p class="car-desc text-dark mt-2"><a ng-href="#!car/?{{car._id}} " >{{car.model | uppercase}}</a></p>
-              <h3 class="car-price">{{car.price | currency}}</h3>
-              <p class="car-desc">{{car.description}}</p>
-
-              <div class="col-md-2 ytu">{{car.year}}</div>
-              <div class="col-md-3 ml-1 ytu">{{car.transmission}}</div>
-              <div class="col-md-2 ml-1 ytu">{{car.useWay}}</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 </div>

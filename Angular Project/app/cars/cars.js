@@ -19,6 +19,19 @@ angular.module('myApp.cars', ['ngRoute'])
         .then(function(response) {
             $scope.carss = response.data;
 
+
+             $scope.carOnPage = 5;
+            $scope.startFrom = 0;
+            $scope.CountPageDivs = [];
+            for(var i=1; i <= Math.round($scope.carss.data.cars.length/5); i++) {
+                $scope.CountPageDivs.push(i);
+            }
+            $scope.PaginationFunction = function(event){
+                $scope.turId = event.target.id;
+                $scope.startFrom= ($scope.turId-1)*$scope.carOnPage;
+            };
+
+
         })
 
 

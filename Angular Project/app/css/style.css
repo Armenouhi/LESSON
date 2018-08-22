@@ -488,6 +488,12 @@ input[type="range"] {
     margin: 15px;
 }
 
+.pagination {
+    width: 100px;
+    border-radius: 10px;
+    height: 30px;
+}
+
 
 /*Footer*/
 .footer-child-one {

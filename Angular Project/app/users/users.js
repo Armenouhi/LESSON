@@ -19,8 +19,5 @@ angular.module('myApp.users', ['ngRoute'])
         });
         console.log(data)
 
-        $http.post("http://localhost:8081/user_list", data).success(function(data, status) {
-            console.log('Data posted successfully');
-        })
     }
 }]);

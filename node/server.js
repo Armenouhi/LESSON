@@ -504,52 +504,6 @@ res.setHeader('Access-Control-Allow-Origin', '*');
 })
 
 
-app.post('/user_list', function(req, res) {
-
-    var user = [];
-    user.push(data)
-
-
-    MongoClient.connect(db_host, function (err, client) {
-        if (err) throw err
-
-        var db = client.db(db_name)
-
-        db.collection('users').find().toArray(function (err, result) {
-            if (err) throw err
-
-            res.send(result);
-        })
-    })
-
-
-    app.post('/insert', function(req, res) {
-        MongoClient.connect(db_host, function (err, client) {
-            if (err) throw err
-
-            var db = client.db(db_name)
-            var user = { name: "Company Inc", address: "Highway 37" };
-            db.collection("users").insert(user, function(err, resp) {
-                if (err) throw err;
-                console.log("1 document inserted");
-                res.send('success');
-
-
-
-            });
-        })
-    })
-
-    // console.log(JSON.stringify(responseBody));
-    res.write(JSON.stringify(responseBody));
-
-    res.send();
-    res.end();
-
-});
-
-
-
 var server = app.listen(8081, function () {
 
    var host = server.address().address

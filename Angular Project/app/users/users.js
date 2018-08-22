@@ -9,14 +9,14 @@ angular.module('myApp.users', ['ngRoute'])
   });
 }])
 
-.controller('UsersCtrl', [function() {
-    $scope.submit= function(){
-        var data = $.param({
+.controller('UsersCtrl', [function($scope) {
+    $scope.submit= function(data){
+        data = [{
             user: JSON.stringify({
-                email : $scope.email,
-                pswd : $scope.pswd
+                email: $scope.email,
+                pswd: $scope.pswd
             })
-        });
+        }];
         console.log(data)
 
     }

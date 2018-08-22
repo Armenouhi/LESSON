@@ -1,0 +1,30 @@
+<div class="container" ng-app="myApp" ng-controller="CarCtrl">
+  <section id="sec_car">
+
+    <div id="{{car._id}}" ng-if="car._id== id"  class="col-md-12 bg-light mt-5 d-flex info" ng-repeat="car in carss.data.cars">
+      <div class="col-md-5" >
+        <img class="carsImg" src="{{car.image}}">
+      </div>
+      <div class="col-md-7">
+        <p class="car-desc text-dark mt-2" ng-click="showDetails = ! showDetails" id="name-{{car._id}}">{{car.model | uppercase}}</p>
+        <div class="row">
+          <p class="fa fa-star-o" ></p>
+          <p class="fa fa-star-o" ></p>
+          <p class="fa fa-star-o" ></p>
+          <p class="fa fa-star-o" ></p>
+          <p class="fa fa-star-o" ></p>
+        </div>
+        <h3 class="car-price">{{car.price | currency}}</h3>
+        <p class="car-desc" style="color: black">{{car.description}}</p>
+        <p class="car-cond" style="color: black">{{car.condition}}</p>
+        <p class="car-body" style="color: black" id="fav-{{car._id}}" ng-hide="showDetails">{{car.body}}</p>
+
+        <div class="col-md-2 ytu">{{car.year}}</div>
+        <div class="col-md-3 ml-1 ytu">{{car.transmission}}</div>
+        <div class="col-md-2 ml-1 ytu">{{car.useWay}}</div>
+      </div>
+    </div>
+
+  </section>
+
+</div>

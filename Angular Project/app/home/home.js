@@ -32,5 +32,19 @@ angular.module('myApp.home', ['ngRoute'])
         });
 
 
+    $scope.addCars = function(){
+        $scope.dataCars = [
+            {
+                cars_name : $scope.cars_name,
+                cars_price : $scope.cars_price,
+                cars_year : $scope.cars_year,
+                cars_transmission : $scope.cars_transmission,
+                cars_useWay : $scope.cars_useWay
+            }
+        ];
+        console.log( $scope.dataCars);
+    }
+
+
 })
 

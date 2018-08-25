@@ -13,11 +13,11 @@
                    </span>
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" ng-model="pswd"
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" ng-model="password"
                                ng-pattern="/^[a-z0-9]+$/i" required>
                         <br/>
-                        <span style="color:red" ng-show="usersForm.pswd.$dirty && usersForm.pswd.$invalid" class="ng-hide">
+                        <span style="color:red" ng-show="usersForm.password.$dirty && usersForm.password.$invalid" class="ng-hide">
                    Please Enter Valid  Password.!
                    </span>
                     </div>
@@ -26,7 +26,7 @@
                             <input class="form-check-input mt-4" type="checkbox" name="remember"><p class="ml-5">Remember me</p>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary" data-ng-click="submit()">Submit</button>
+                    <button type="button" class="btn btn-primary" data-ng-click="addUsers()">Click</button>
                 </form>
             </div>
         </div>

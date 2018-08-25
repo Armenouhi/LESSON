@@ -9,15 +9,14 @@ angular.module('myApp.users', ['ngRoute'])
   });
 }])
 
-.controller('UsersCtrl', [function($scope) {
-    $scope.submit= function(data){
-        data = [{
-            user: JSON.stringify({
-                email: $scope.email,
-                pswd: $scope.pswd
-            })
-        }];
-        console.log(data)
-
+.controller('UsersCtrl', ['$scope', function($scope) {
+    $scope.addUsers = function(){
+        $scope.dataUsers = [
+            {
+                email : $scope.email,
+                password : $scope.password
+            }
+        ];
+        console.log( $scope.dataUsers);
     }
 }]);

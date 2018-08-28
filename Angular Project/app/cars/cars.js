@@ -18,8 +18,6 @@ angular.module('myApp.cars', ['ngRoute'])
     $http.get("http://localhost:8081")
         .then(function(response) {
             $scope.carss = response.data;
-
-
              $scope.carOnPage = 5;
             $scope.startFrom = 0;
             $scope.CountPageDivs = [];
@@ -30,11 +28,5 @@ angular.module('myApp.cars', ['ngRoute'])
                 $scope.turId = event.target.id;
                 $scope.startFrom= ($scope.turId-1)*$scope.carOnPage;
             };
-
-
-        })
-
-
-
-
+        });
 });

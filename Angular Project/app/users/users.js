@@ -9,14 +9,20 @@ angular.module('myApp.users', ['ngRoute'])
   });
 }])
 
-.controller('UsersCtrl', ['$scope', function($scope) {
+.controller('UsersCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.addUsers = function(){
-        $scope.dataUsers = [
+
+        var url = "http://127.0.0.1:7778/api/car";
+
+        var dataUsers =
             {
                 email : $scope.email,
                 password : $scope.password
-            }
-        ];
-        console.log( $scope.dataUsers);
-    }
+            };
+
+        $http.post(url, dataUsers)
+            .then(function(httpRequest) {
+                //console.log(httpRequest);
+            });
+    };
 }]);

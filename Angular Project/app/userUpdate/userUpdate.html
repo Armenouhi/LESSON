@@ -1,0 +1,41 @@
+<div class="container" ng-app="myApp" ng-controller="UserUpdateCtrl">
+    <section class="section-users mt-5" >
+        <div class="row">
+
+            <div class="col-md-12 mt-3">
+                <h2>Update</h2>
+                <form action=""  method = "POST" enctype="multipart/form-data" name="usersForm">
+                    <div class="form-group">
+                        <label for="email2">Email:</label>
+                        <input type="email" class="form-control" id="email2" placeholder="Enter email" name="email" ng-model="email" required>
+                        <br/>
+                        <span style="color:red" ng-show="usersForm.email.$dirty && usersForm.email.$invalid" class="ng-hide">
+                   Please Enter Valid  Email.!
+                   </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password3">Password:</label>
+                        <input type="password" class="form-control" id="password3" placeholder="Enter password" name="password" ng-model="password"
+                               ng-pattern="/^[a-z0-9]+$/i" required>
+                        <br/>
+                        <span style="color:red" ng-show="usersForm.password.$dirty && usersForm.password.$invalid" class="ng-hide">
+                   Please Enter Valid  Password.!
+                   </span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input mt-4" type="checkbox" name="remember"><p class="ml-5">Remember me</p>
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-ng-click="updateUsers()">Click</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!--data-ng-click="updateUsers()"-->
+
+
+

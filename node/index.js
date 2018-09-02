@@ -1,38 +1,17 @@
-// var http = require('http');
-//
-// http.createServer(function (req, res) {
-//     res.writeHead(200, {'Content-Type': 'text/plain'});
-//     res.end('Hello World!');
-// }).listen(7777);
+const express = require('express');
+const bodyParser= require('body-parser');
+const app = express();
 
-
-// var express = require('express');
-// var app = express();
-//
-// app.get('/', function (req, res) {
-//    res.send('Hello World');
-// })
-//
-// var server = app.listen(7777, function () {
-//    var host = server.address().address
-//    var port = server.address().port
-//
-//    console.log("Example app listening at http://%s:%s", host, port)
-// })
+const MongoClient = require('mongodb').MongoClient
 
 
 
-var express = require('express');
-var bodyParser= require('body-parser');
-var app = express();
+ const url = 'mongodb://localhost:27017/dbCars';
+const dbName = 'dbCars';
+const collName = 'users';
 
-var MongoClient = require('mongodb').MongoClient
-var dbUrl = 'mongodb://localhost:27017/dbCars';
-var dbName = 'dbCars';
-var collName = 'users';
+const ObjectID = require("bson-objectid");
 
-var ObjectID = require("bson-objectid");
-var S = require('string');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,7 +30,7 @@ app.post('/userData', function (req, res) {
     console.log(req_body);
     res.end();
 
-    MongoClient.connect(dbUrl, function (err, client) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
         if (err) throw err
 
         var db = client.db(dbName)
@@ -67,34 +46,15 @@ app.post('/userData', function (req, res) {
 
 app.post('/update/userData', function (req, res) {
 
-    const req_body = req.body;
-    // console.log(req_body);
-
-    const req_body_id = req.body.id;
-
     res.end();
 
-    MongoClient.connect("mongodb://localhost:27017/dbCars", function(err, client) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
         if (err) throw err;
         var db = client.db(dbName)
-
-        var myId = req_body_id;
-        var myObj = req_body
-
-        // console.log(myObj);
-        // console.log(myObj.email);
-        // console.log(myObj.password);
-
-        var objUpd = {
-            email:  myObj.email,
-            password: myObj.password
-        }
-
-
-        db.collection(collName).updateOne({'_id':ObjectID(myId)},{$set: {"email": S(objUpd.email)} }, function(err, obj) {
+        db.collection(collName).updateOne({'_id':ObjectID(req.body.id)}, { $set : {email : req.body.email, password: req.body.password}}, function(err, obj) {
             if (err) throw err;
-            console.log(objUpd.email);
-            console.log("1 document updated");
+             console.log(req.body.email + " " + req.body.password);
+             console.log("1 document updated");
             client.close();
         });
 
@@ -109,7 +69,7 @@ app.post('/delete/userData', function (req, res) {
 
     res.end();
 
-    MongoClient.connect("mongodb://localhost:27017/dbCars", function(err, client) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
         if (err) throw err;
         var db = client.db(dbName)
 
@@ -126,7 +86,7 @@ app.post('/delete/userData', function (req, res) {
 
 app.get('/api/user_list', function (req, res) {
 
-    MongoClient.connect(dbUrl, function (err, client) {
+    MongoClient.connect(url,  { useNewUrlParser: true },function (err, client) {
         if (err) throw err
 
         var db = client.db(dbName)

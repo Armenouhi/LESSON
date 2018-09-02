@@ -23,7 +23,7 @@ angular.module('myApp.userUpdate', ['ngRoute'])
 
         $http.post(urlDelete, dataUpdate)
             .then(function(httpRequest) {
-                console.log(httpRequest);
+                console.log(httpRequest.status + "OK");
             });
     };
 
